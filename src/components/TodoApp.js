@@ -12,7 +12,7 @@ class TodoApp extends Component {
 
 		this.state = {
 			todos: store ? store : [],
-			amount: store.length
+			amount: store?.length
 		}
 		this.addTodo = this.addTodo.bind(this); 
 		this.deleteTodo = this.deleteTodo.bind(this); 
