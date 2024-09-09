@@ -1,8 +1,22 @@
-version: "3.8"
+# version: "3.8"
+# services:
+#   nginx:  
+#     image: nginx:1.27.0
+#     ports:
+#       - 80:80
+#     volumes: 
+#       - ../build:/usr/share/nginx/html  
+
+version: '3.8'
+
 services:
-  nginx:  
-    image: nginx:1.27.0
+  app:
+    build:
+      context: ..
+      dockerfile: DockerFile
     ports:
-      - 80:80
-    volumes: 
-      - ../build:/usr/share/nginx/html
+      - "3000:3000"
+    volumes:
+      - ..:/usr/src/app
+    environment:
+      - NODE_ENV=development
